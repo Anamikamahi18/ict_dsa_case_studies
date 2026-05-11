@@ -57,7 +57,7 @@ The identified groups can help policymakers design better welfare schemes, emplo
 
 ---
 
-# Objective
+## Objective
 
 The main objective of this project is to:
 
@@ -75,7 +75,7 @@ The main objective of this project is to:
 
 ---
 
-# Dataset Overview
+## Dataset Overview
 
 The dataset contains demographic and socioeconomic information of U.S. adults.
 
@@ -104,9 +104,9 @@ The dataset contains demographic and socioeconomic information of U.S. adults.
 
 ---
 
-# Project Workflow
+## Project Workflow
 
-## Step 1: Data Loading & Understanding
+### Step 1: Data Loading & Understanding
 - Loaded dataset
 - Checked dataset shape
 - Inspected column names and datatypes
@@ -114,26 +114,26 @@ The dataset contains demographic and socioeconomic information of U.S. adults.
 
 ---
 
-## Step 2: Missing Value Handling
+### Step 2: Missing Value Handling
 Missing values were identified and handled using:
 
-### Numerical Columns
+#### Numerical Columns
 - Median Imputation
 
-### Categorical Columns
+#### Categorical Columns
 - Mode Imputation
 
 This ensures no missing values remain before clustering.
 
 ---
 
-## Step 3: Outlier Detection & Treatment
+### Step 3: Outlier Detection & Treatment
 Outliers were analyzed using:
 
 - Boxplots
 - Histograms
 
-### Method Used
+#### Method Used
 **IQR (Interquartile Range) Capping**
 
 Outliers in:
@@ -146,42 +146,42 @@ The `fnlwgt` column was removed due to limited interpretability for clustering.
 
 ---
 
-## Step 4: Feature Selection
+### Step 4: Feature Selection
 Redundant columns were removed:
 
 - `education-num`
 - `income`
 
-### Reason
+#### Reason
 - `education-num` overlaps with `education`
 - `income` must not be used in unsupervised clustering
 
 ---
 
-## Step 5: Encoding Categorical Variables
+### Step 5: Encoding Categorical Variables
 Categorical variables were transformed using:
 
-### One-Hot Encoding
+#### One-Hot Encoding
 
 This converts text categories into machine-readable numerical features.
 
 ---
 
-## Step 6: Feature Scaling
+### Step 6: Feature Scaling
 Feature scaling was applied using:
 
-### StandardScaler
+#### StandardScaler
 
 Scaling ensures all features contribute equally during distance-based clustering.
 
 ---
 
-## Step 7: Exploratory Data Analysis (EDA)
+### Step 7: Exploratory Data Analysis (EDA)
 
 ### Correlation Analysis
 A heatmap was created to analyze correlations among numerical features.
 
-### PCA (Dimensionality Reduction)
+#### PCA (Dimensionality Reduction)
 Principal Component Analysis (**PCA**) was used to:
 
 - Reduce high-dimensional feature space
@@ -189,26 +189,26 @@ Principal Component Analysis (**PCA**) was used to:
 
 ---
 
-## Step 8: KMeans Clustering
+### Step 8: KMeans Clustering
 
-### Choosing Optimal K
+#### Choosing Optimal K
 
 Two methods were used:
 
-#### Elbow Method
+##### Elbow Method
 To analyze WCSS (Within Cluster Sum of Squares)
 
-#### Silhouette Score
+##### Silhouette Score
 To evaluate cluster separation quality
 
 Based on these methods:
 
-### Final Choice
+#### Final Choice
 **K = 4**
 
 ---
 
-## Step 9: Final KMeans Model
+### Step 9: Final KMeans Model
 KMeans clustering was trained with:
 
 - `n_clusters = 4`
@@ -220,11 +220,11 @@ Clusters were visualized using PCA.
 
 ---
 
-## Step 10: Agglomerative Clustering
+### Step 10: Agglomerative Clustering
 
 Agglomerative clustering was also performed for comparison.
 
-### Important Note
+#### Important Note
 Since hierarchical clustering is computationally expensive on large datasets, a **sampled PCA dataset** was used.
 
 This avoids memory crashes and runtime failures.
@@ -233,18 +233,18 @@ Agglomerative clusters were visualized in 2D PCA space.
 
 ---
 
-## Step 11: Cluster Profiling & Interpretation
+### Step 11: Cluster Profiling & Interpretation
 
 Each cluster was analyzed using:
 
-### Numerical Features
+#### Numerical Features
 Average values of:
 - age
 - capital-gain
 - capital-loss
 - hours-per-week
 
-### Categorical Features
+#### Categorical Features
 Most dominant categories such as:
 - education
 - occupation
@@ -252,14 +252,14 @@ Most dominant categories such as:
 - relationship
 - workclass
 
-### Income Comparison
+#### Income Comparison
 Actual income labels were added back **only for interpretation**.
 
 This helped compare discovered clusters against real income distributions.
 
 ---
 
-# Policy Suggestions & Business Implications
+## Policy Suggestions & Business Implications
 
 ### Cluster Groups with Lower Income Levels
 Recommended for:
@@ -285,7 +285,7 @@ Recommended for:
 
 ---
 
-# KMeans vs Agglomerative Clustering
+## KMeans vs Agglomerative Clustering
 
 | Aspect | KMeans | Agglomerative |
 |--------|--------|----------------|
@@ -306,7 +306,7 @@ Agglomerative clustering was used mainly for comparison and visualization purpos
 
 ---
 
-# Conclusion
+## Conclusion
 
 This project successfully identified hidden socioeconomic groups in the U.S. adult population using **unsupervised learning techniques**.
 
@@ -323,7 +323,7 @@ The project highlights the power of clustering for discovering hidden patterns i
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - Python
 - Pandas
@@ -334,7 +334,7 @@ The project highlights the power of clustering for discovering hidden patterns i
 
 ---
 
-# Machine Learning Techniques Used
+## Machine Learning Techniques Used
 
 - Missing Value Imputation
 - Outlier Treatment (IQR)
@@ -347,7 +347,7 @@ The project highlights the power of clustering for discovering hidden patterns i
 
 ---
 
-# Author
+## Author
 
 **Anamika M**  
 Aspiring Data Scientist | Machine Learning Engineer
